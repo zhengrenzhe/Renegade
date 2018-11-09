@@ -2,11 +2,10 @@
 
 from upyun import UpYun
 
-from settings import UPYUN_SERVICE, UPYUN_PASSWORD, UPYUN_USERNAME
+from config import cfg
 
-up = UpYun(UPYUN_SERVICE, UPYUN_USERNAME, UPYUN_PASSWORD)
+up = UpYun(cfg.services[0].auth.service_name, cfg.services[0].auth.username, cfg.services[0].auth.password)
 
 
 def upload(f, path_name):
     res = up.put(path_name, f)
-    print(res)

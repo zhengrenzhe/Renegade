@@ -105,3 +105,4 @@ venv.bak/
 
 settings.py
 db.json
+config.yaml

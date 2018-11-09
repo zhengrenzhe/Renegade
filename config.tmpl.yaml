@@ -1,0 +1,18 @@
+bot:
+  debug:
+  token:
+
+services:
+- name:
+  mode: upyun
+  auth:
+    service_name:
+    username:
+    password:
+
+- name:
+  mode: qiniu
+  auth:
+    bucket_name:
+    access_key:
+    secret_key:
