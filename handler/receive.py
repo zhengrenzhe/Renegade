@@ -5,9 +5,11 @@ from io import BytesIO
 from telegram.bot import Bot, Update
 from telegram.ext import MessageHandler, Filters
 
+from middleware.env_check import env_check
 from upload.upyun import upload
 
 
+@env_check
 def receive_callback(bot: Bot, update: Update):
     file_target = update.message.document or update.message.photo[-1]
     file = bot.get_file(file_target.file_id)

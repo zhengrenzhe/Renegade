@@ -4,7 +4,10 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.bot import Bot, Update
 from telegram.ext import CommandHandler
 
+from middleware.env_check import env_check
 
+
+@env_check
 def test_callback(bot: Bot, update: Update):
     button_list = [
         InlineKeyboardButton("col1", callback_data="A"),
