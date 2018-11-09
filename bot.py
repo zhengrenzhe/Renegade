@@ -3,8 +3,10 @@
 
 from telegram.ext import Updater
 
+from handler.kb import kb
 from handler.receive import receive
 from handler.start import start
+from handler.test import test
 from settings import BOT_TOKEN, DEBUG
 
 if DEBUG:
@@ -19,4 +21,6 @@ dispatcher = updater.dispatcher
 
 dispatcher.add_handler(start)
 dispatcher.add_handler(receive)
+dispatcher.add_handler(test)
+dispatcher.add_handler(kb)
 updater.start_polling()
