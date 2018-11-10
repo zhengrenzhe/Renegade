@@ -35,3 +35,5 @@ dispatcher.add_handler(set_default_service)
 dispatcher.add_handler(kb_callback)
 dispatcher.add_handler(remove_default_service)
 updater.start_polling()
+
+print("✨ bot is running...")

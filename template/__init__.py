@@ -32,3 +32,19 @@ def set_default_service_success_tpl():
 
 def remove_default_service_success_tpl(old_default_service_name):
     return tpl("remove_default_service_success.mako").render_unicode(**locals())
+
+
+def choice_service_tpl():
+    return tpl("choice_service.mako").render_unicode(**locals())
+
+
+def session_expire_tpl():
+    return tpl("session_expire.mako").render_unicode(**locals())
+
+
+def upload_success(service_name, mode, cdn_url):
+    return tpl("upload_success.mako").render_unicode(**locals())
+
+
+def upload_error(service_name, error_detail):
+    return tpl("upload_error.mako").render_unicode(**locals())

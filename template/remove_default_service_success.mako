@@ -1,1 +1,1 @@
-🤙 Current default upload service <b>${old_default_service_name}</b> has already removed
+🤙 Current default upload service <b>${old_default_service_name}</b> has already removed.

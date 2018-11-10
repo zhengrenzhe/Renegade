@@ -5,6 +5,7 @@ bot:
 services:
 - name:
   mode: upyun
+  domain:
   auth:
     service_name:
     username:
