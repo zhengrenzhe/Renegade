@@ -16,7 +16,7 @@ def tpl(file_name):
 
 def start_tpl():
     services = cfg.get("services")
-    default_service = default_service = db.get(keys.default_service)
+    default_service = db.get(keys.default_service)
     return tpl("start.mako").render_unicode(**locals())
 
 

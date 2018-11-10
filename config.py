@@ -40,6 +40,7 @@ def config_check():
 
     names = list(map(lambda x: x.name, cfg.services))
     names_set = list(set(names))
+
     if len(names) != len(names_set):
         return [False, "服务名不能重复"]
 

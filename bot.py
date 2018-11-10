@@ -21,7 +21,8 @@ if not check_result[0]:
 if cfg.bot.debug:
     import logging
 
-    logging.basicConfig(level=logging.ERROR, format="%(name)s-%(levelname)s: %(message)s")
+    logging.basicConfig(level=logging.ERROR,
+                        format="%(name)s-%(levelname)s: %(message)s")
     bot_logger = logging.getLogger("telegram.bot")
     bot_logger.setLevel(logging.ERROR)
 

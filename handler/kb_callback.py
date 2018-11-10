@@ -12,7 +12,8 @@ def set_default(bot: Bot, update: Update):
     name = update.callback_query.data.split(" ").pop()
     db.set(keys.default_service, name)
     msg = set_default_service_success_tpl()
-    bot.send_message(chat_id=update.callback_query.message.chat.id, text=msg, parse_mode=ParseMode.HTML)
+    bot.send_message(chat_id=update.callback_query.message.chat.id,
+                     text=msg, parse_mode=ParseMode.HTML)
 
 
 def kbcallback_callback(bot: Bot, update: Update):

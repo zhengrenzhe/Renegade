@@ -21,4 +21,5 @@ def set_default_service_callback(bot: Bot, update: Update):
                      reply_markup=InlineKeyboardMarkup(buttons))
 
 
-set_default_service = CommandHandler("set_default_service", set_default_service_callback)
+set_default_service = CommandHandler(
+    "set_default_service", set_default_service_callback)
