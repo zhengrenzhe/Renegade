@@ -6,10 +6,11 @@ import sys
 from telegram.ext import Updater
 
 from config import config_check, cfg
-from handler.kb import kb
+from handler.kb_callback import kb_callback
 from handler.receive import receive
+from handler.remove_default_service import remove_default_service
+from handler.set_default_service import set_default_service
 from handler.start import start
-from handler.test import test
 
 check_result = config_check()
 
@@ -29,6 +30,7 @@ dispatcher = updater.dispatcher
 
 dispatcher.add_handler(start)
 dispatcher.add_handler(receive)
-dispatcher.add_handler(test)
-dispatcher.add_handler(kb)
+dispatcher.add_handler(set_default_service)
+dispatcher.add_handler(kb_callback)
+dispatcher.add_handler(remove_default_service)
 updater.start_polling()

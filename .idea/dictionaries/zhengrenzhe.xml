@@ -2,7 +2,11 @@
   <dictionary name="zhengrenzhe">
     <words>
       <w>casq</w>
+      <w>dotdict</w>
+      <w>endfor</w>
+      <w>kbcallback</w>
       <w>levelname</w>
+      <w>mako</w>
       <w>qiniu</w>
       <w>upyun</w>
       <w>zhengrenzhe</w>
