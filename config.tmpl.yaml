@@ -3,17 +3,18 @@ bot:
   token:
 
 services:
-- name:
-  mode: upyun
-  domain:
-  auth:
-    service_name:
-    username:
-    password:
+  - name:
+    mode: upyun
+    domain:
+    auth:
+      service_name:
+      username:
+      password:
 
-- name:
-  mode: qiniu
-  auth:
-    bucket_name:
-    access_key:
-    secret_key:
+  - name:
+    mode: qiniu
+    domain:
+    auth:
+      bucket_name:
+      access_key:
+      secret_key:
