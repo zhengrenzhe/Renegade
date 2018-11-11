@@ -34,6 +34,10 @@ def remove_default_service_success_tpl(old_default_service_name):
     return tpl("remove_default_service_success.mako").render_unicode(**locals())
 
 
+def remove_default_service_error_tpl():
+    return tpl("remove_default_service_error.mako").render_unicode(**locals())
+
+
 def choice_service_tpl():
     return tpl("choice_service.mako").render_unicode(**locals())
 
