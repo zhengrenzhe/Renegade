@@ -14,4 +14,4 @@ def start_callback(bot: Bot, update: Update):
     bot.send_message(chat_id=update.message.chat_id, text=msg, parse_mode=ParseMode.HTML)
 
 
-start = CommandHandler("start", start_callback)
+start = CommandHandler("start", start_callback, pass_user_data=True)

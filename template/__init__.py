@@ -2,16 +2,19 @@
 
 import os
 
-from mako.template import Template
+from mako.lookup import TemplateLookup
 
 from config import cfg
 from middleware.db import db, keys
 
 __DIR__ = os.path.dirname(os.path.realpath(__file__))
 
+lookup = TemplateLookup(directories=[__DIR__], input_encoding="utf-8", module_directory="/tmp/mako_modules")
+
 
 def tpl(file_name):
-    return Template(filename="%s/%s" % (__DIR__, file_name), input_encoding="utf-8")
+    tp = lookup.get_template(file_name)
+    return tp
 
 
 def start_tpl():
@@ -52,3 +55,7 @@ def upload_success(service_name, mode, cdn_url):
 
 def upload_error(service_name, error_detail):
     return tpl("upload_error.mako").render_unicode(**locals())
+
+
+def service_not_found():
+    return tpl("service_not_found.mako").render_unicode(**locals())
