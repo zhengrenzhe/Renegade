@@ -1,32 +1,22 @@
 # -*- coding: utf-8 -*-
 
 
-import sys
+import os
+import logging
 
 from telegram.ext import Updater
 
-from config import config_check, cfg
 from handler.kb_callback import kb_callback
 from handler.receive import receive
 from handler.remove_default_service import remove_default_service
 from handler.set_default_service import set_default_service
 from handler.start import start
 
-check_result = config_check()
+logging.basicConfig(level=logging.INFO, format="%(name)s: %(message)s")
+bot_logger = logging.getLogger("telegram.bot")
+bot_logger.setLevel(logging.INFO)
 
-if not check_result[0]:
-    print(check_result[1])
-    sys.exit(0)
-
-if cfg.bot.debug:
-    import logging
-
-    logging.basicConfig(level=logging.INFO,
-                        format="%(name)s-%(levelname)s: %(message)s")
-    bot_logger = logging.getLogger("telegram.bot")
-    bot_logger.setLevel(logging.INFO)
-
-updater = Updater(token=cfg.bot.token)
+updater = Updater(token=os.environ.get('BOT_TOKEN'))
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(start)
@@ -36,4 +26,5 @@ dispatcher.add_handler(kb_callback)
 dispatcher.add_handler(remove_default_service)
 updater.start_polling()
 
-print("✨ bot is running...")
+
+print("bot is running...")

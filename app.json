@@ -1,5 +1,5 @@
 {
-  "name": "Start on Heroku: Python",
+  "name": "Renegade",
   "image": "heroku/python",
   "addons": ["mongolab"]
 }

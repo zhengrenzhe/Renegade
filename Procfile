@@ -1,1 +1,1 @@
-worker: python bot-shadow.py
+worker: python bot.py

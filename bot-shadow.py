@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os
-import pymongo
 from telegram.ext import CommandHandler
 from telegram.ext import Updater
+
 
 updater = Updater(token='685531245:AAGXqWyL8OYSK-gl0curHEh95nRxH9jnQsc')
 dispatcher = updater.dispatcher
@@ -21,7 +20,7 @@ def settt(bot, update):
 
 def gettt(bot, update):
     bot.send_message(chat_id=update.message.chat_id,
-                     text="%s" % os.environ.get('MONGODB_URI'))
+                     text="ss")
 
 
 start_handler = CommandHandler('start', start)
