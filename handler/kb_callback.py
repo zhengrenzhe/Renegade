@@ -4,17 +4,16 @@ from telegram import ParseMode
 from telegram.bot import Bot, Update
 from telegram.ext import CallbackQueryHandler
 
-from upload import upload
 from middleware.db import db, keys
 from template import set_default_service_success_tpl, session_expire_tpl
+from upload import upload
 
 
 def set_default(bot: Bot, update: Update):
     name = update.callback_query.data.split(" ").pop()
     db.set(keys.default_service, name)
     msg = set_default_service_success_tpl()
-    bot.send_message(chat_id=update.callback_query.message.chat.id,
-                     text=msg, parse_mode=ParseMode.HTML)
+    bot.send_message(chat_id=update.callback_query.message.chat.id, text=msg, parse_mode=ParseMode.HTML)
 
 
 def pre_upload(bot: Bot, update: Update, user_data):
