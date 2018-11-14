@@ -14,6 +14,7 @@ from handler.remove_default_service import remove_default_service
 from handler.set_default_service import set_default_service
 from handler.start import start
 
+# check is exist upload services
 check_res = config_check()
 if not check_res[0]:
     print(check_res[1])
