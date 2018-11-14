@@ -5,7 +5,7 @@ import os
 from mako.lookup import TemplateLookup
 
 from config import cfg
-from middleware.db import db, keys
+from store import db
 
 __DIR__ = os.path.dirname(os.path.realpath(__file__))
 
@@ -19,17 +19,17 @@ def tpl(file_name):
 
 def start_tpl():
     services = cfg.get("services")
-    default_service = db.get(keys.default_service)
+    default_service = db.default_service
     return tpl("start.mako").render_unicode(**locals())
 
 
 def set_default_service_tpl():
-    default_service = db.get(keys.default_service)
+    default_service = db.default_service
     return tpl("set_default_service.mako").render_unicode(**locals())
 
 
 def set_default_service_success_tpl():
-    default_service = db.get(keys.default_service)
+    default_service = db.default_service
     return tpl("set_default_service_success.mako").render_unicode(**locals())
 
 

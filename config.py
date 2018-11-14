@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 from dotmap import DotMap
 from yaml import load
 
-__cfg_yaml = load(open("./config.yaml", "r"))
+UPLOAD_SERVICE = os.environ.get("UPLOAD_SERVICE")
+
+__cfg_yaml = load(UPLOAD_SERVICE)
 
 cfg = DotMap(__cfg_yaml)
 
 
 def config_check():
-    if not cfg.bot.token:
-        return [False, "未填写 telegram bot token"]
-
     if not len(cfg.services):
         return [False, "未填写存储服务"]
 

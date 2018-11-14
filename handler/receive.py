@@ -3,14 +3,14 @@
 from telegram.bot import Bot, Update
 from telegram.ext import MessageHandler, Filters
 
-from middleware.db import db, keys
+from store import db
 from template import choice_service_tpl
 from upload import upload
 from utils import services_buttons
 
 
 def receive_callback(bot: Bot, update: Update, user_data):
-    default_service = db.get(keys.default_service)
+    default_service = db.default_service
 
     file_target = update.message.document or update.message.photo[-1]
 
