@@ -4,16 +4,15 @@ import os
 
 from pymongo import MongoClient
 
-SUPPORTED_SERVICE = ("upyun", "qiniu")
-
 
 class __db__():
 
     def __init__(self):
-        mongo_url = os.environ.get('MONGODB_URI')
+        mongo_url = os.environ.get("MONGODB_URI")
+        db_name = os.environ.get("DB_NAME")
 
         self.client = MongoClient(mongo_url)
-        self.db = self.client.heroku_q2mp63z1
+        self.db = self.client[db_name]
         self.config_collection = self.db.config
         self.services_collection = self.db.services
 
