@@ -1,5 +1,16 @@
 {
-  "name": "Renegade",
+  "name": "Renegade-telegram-bot",
+  "description": "A telegram bot that auto upload received file to cdn",
   "image": "heroku/python",
-  "addons": ["mongolab"]
+  "repository": "https://github.com/zhengrenzhe/Renegade",
+  "website": "https://github.com/zhengrenzhe/Renegade",
+  "logo": "https://telegram.org/img/t_logo.png",
+  "keywords": [
+    "telegram",
+    "python",
+    "mongodb"
+  ],
+  "addons": [
+    "mongolab"
+  ]
 }
