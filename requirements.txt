@@ -12,7 +12,7 @@ pycparser==2.19
 pymongo==3.7.2
 pyOpenSSL==18.0.0
 python-telegram-bot==11.1.0
-PyYAML==3.13
+PyYAML==5.4
 qiniu==7.2.2
 requests==2.20.1
 six==1.11.0
